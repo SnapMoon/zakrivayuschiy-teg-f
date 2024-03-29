@@ -12,3 +12,41 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+
+@keyframes menu-pointer {
+    0% {
+        translate: 0 0;
+    }
+
+    100% {
+        translate: -6px 0;
+    }
+}
+
+@keyframes like-icon-hover {
+    0% {
+        translate: 0;
+    }
+    100% {
+        translate: -78px 0;
+    }
+}
+
+@keyframes like-icon-active {
+    0% {
+        translate: -117px 0;
+    }
+    100% {
+        translate: -195px 0;
+    }
+}
+
+@keyframes like-icon-like {
+    0% {
+        translate: -234px 0;
+    }
+    100% {
+        translate: -429px 0;
+    }
+}

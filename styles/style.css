@@ -15,6 +15,418 @@
 */
 
 .page {
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
+    width: 100vh;
+    min-inline-size: 320px;
+    min-block-size: 100dvb;
+    background: var(--back-color, #fff);
+    margin-inline: auto;
+
+    background-image: var(--page-background-image, none);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.header {
+    max-width: 700px;
+    margin-inline: auto;
+    margin-block-start: 100px;
+    border: 2px solid var(--border-color, #000);
+    font-family: 'Press-Start-2-P', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    text-transform: uppercase;
+    color: var(--text-color, #000);
+    background-color: var(--back-color, #fff);
+}
+
+.header__title {
+    font-size: clamp(1.4375rem, 1.6356rem + -0.8451vw, 0.875rem);
+    line-height: 23px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-block-start: 136px;
+    gap: 20px;
+    font-weight: 400;
+}
+
+.header__title-accent {
+    font-size: clamp(4.0625rem, 4.4146rem + -1.5023vw, 3.0625rem);
+    line-height: 65px;
+}
+
+.theme-menu__list {
+    font-size: 14px;
+    line-height: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-block-end: 25px;
+}
+
+.theme-menu__button {
+    background: none;
+    border: none;
+    text-transform: uppercase;
+    background-size: 110%;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    position: relative;
+}
+
+.theme-menu__button:hover {
+    opacity: 0.6;
+    transition: opacity .3s ease-in;
+}
+
+.theme-menu__button::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 20px;
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: var(--text-color, #00CC14);
+    transition: width 0.5s ease-in-out;
+}
+
+.theme-menu__button:focus-within::after {
+    width: 75%;
+}
+
+
+
+.theme-menu__button:focus {
+    outline: none;
+}
+
+.theme-menu__button:focus-within {
+    outline: none;
+    opacity: 0.6;
+}
+
+
+.theme-menu__button::before {
+    content: ' ';
+    display: block;
+    inline-size: 14px;
+    color: var(--text-color, #000);
+
+}
+
+.theme-menu__button[disabled]::before {
+    content: '▶';
+    animation: menu-pointer 2s forwards steps(2) infinite;
+}
+
+.theme-menu__button[disabled] {
+    filter: contrast(30%);
+}
+
+
+
+/*MAIN*/
+
+.main {
+    margin-inline: auto;
+    margin-block-start: 100px;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-block-end: 50px;
+}
+
+.card {
+    border: 2px solid var(--border-color, #000);
+    color: var(--text-color, #000);
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    padding-block-end: 25px;
+    background-color: var(--back-color, #fff);
+}
+
+.card-title {
+    padding-block: 3px;
+    padding-inline-start: 10px;
+    font-family: 'Inter-P', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21.78px;
+    width: 100%;
+    font-stretch: 200%;
+}
+
+.card-img {
+    background-image: url("/images/card-image.png");
+    width: 100%;
+    height: 697px;
+    position: relative;
+}
+
+
+.card-img-text {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-family: 'Press-Start-2-P', sans-serif;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 400;
+    color: var(--text-color, #000);
+    -webkit-text-stroke: 1px var(--stroke-color);
+    mix-blend-mode: hard-light;
+    text-transform: uppercase;
+    opacity: .5;
+    z-index: 1;
+}
+
+.card:nth-child(2) .card-img {
+    filter: blur(2px);
+}
+
+.card:nth-child(3) .card-img {
+    filter: brightness(25%);
+}
+
+.card:nth-child(4) .card-img {
+    filter: hue-rotate(138deg);
+}
+
+.card:nth-child(5) .card-img {
+    filter: invert(70%);
+}
+
+.card:nth-child(6) .card-img {
+    filter: sepia(100%);
+}
+
+.card:nth-child(7) .card-img {
+    filter: saturate(180%);
+}
+
+.card:nth-child(8) .card-img {
+    filter: contrast(200%);
+}
+
+.card-desc {
+    font-family: 'Inter-P', sans-serif;
+    font-variation-settings: 'wght' 900;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    padding-inline: 25px;
+    padding-block-start: 27px;
+    width: 100%;
+}
+
+.card__like-button {
+    appearance: none;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    margin-block-start: 25px;
+}
+
+.card__like-button:focus {
+    outline: none;
+}
+
+.card__like-button:focus-visible .card__like-button-block{
+    box-shadow: 2px 2px 0 0 var(--border-color, #000);
+}
+
+.like-icon {
+    inline-size: 39px;
+    block-size: 36px;
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+.like-icon:before {
+    content: '';
+    position: absolute;
+    display: block;
+    block-size: 36px;
+    inline-size: 702px;
+    background: no-repeat var(--like-sprite);
+    inset-block-start: 0;
+    inset-inline-start: 0;
+}
+
+.card__like-button-block {
+    font: 400 14px 'Press-Start-2-P', sans-serif;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: 130px;
+    block-size: 38px;
+    appearance: none;
+    border: 2px solid var(--border-color, #000);
+    position: relative;
+    overflow: hidden;
+    margin-inline-end: 25px;
+}
+
+.card__like-button-text {
+    position: relative;
+    mix-blend-mode: difference;
+    color: var(--button-color, #fff);
+}
+
+.card__like-button-block::before {
+    content: '';
+    inset: 0;
+    display: block;
+    position: absolute;
+    background: var(--border-color);
+    transition: .2s translate ease-in;
+    translate: -100% 0;
+}
+
+.card__like-button-block:focus {
+    outline: none;
+}
+
+.card__like-button:hover .card__like-button-block::before {
+    translate: 0;
+}
+
+.card__like-button:hover .like-icon:not(.is-liked)::before {
+    animation: like-icon-hover .2s forwards steps(2) 1;
+}
+
+.card__like-button:active .like-icon:not(.is-liked)::before {
+    animation: like-icon-active .2s forwards steps(2) 1;
+}
+
+.like-icon.is-liked::before {
+    animation: like-icon-like .5s forwards steps(5) 1;
+}
+
+.like-icon.is-liked + .card__like-button-block::before {
+    translate: 0;
+}
+
+.button-save {
+    margin-inline: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    border: 2px solid var(--text-color, #000000);
+    font-family: 'Press-Start-2-P', sans-serif;
+    color: var(--text-color, #000);
+    background-color: var(--back-color);
+    font-size: 14px;
+    margin-block-end: 100px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    appearance: none;
+}
+
+
+.button-save__text {
+    position: relative;
+    mix-blend-mode: difference;
+    color: var(--button-color, #fff);
+}
+
+.button-icon {
+    block-size: 22px;
+    inline-size: 22px;
+    color: var(--button-color, #fff);
+    mix-blend-mode: difference;
+    position: relative;
+}
+
+.button-save::before {
+    content: '';
+    inset: 0;
+    display: block;
+    position: absolute;
+    background: var(--border-color, #000);
+    transition: .5s translate ease-in;
+    translate: -100% 0;
+}
+
+.button-save:hover.button-save::before {
+    translate: 0;
+}
+
+.save {
+    background-color: var(--back-color, #fff);
+    border: 2px solid var(--text-color, #000000);
+    padding: 30px;
+    text-transform: uppercase;
+    max-width: 353px;
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+}
+
+.save::backdrop {
+    background: #000;
+    opacity: .7;
+    overflow: auto;
+    overscroll-behavior: none;
+}
+
+
+
+
+.save__text {
+    color: var(--text-color, #000000);
+    position: relative;
+    font-family: 'Press-Start-2-P', sans-serif;
+    line-height: 21px;
+    font-size: 14px;
+}
+
+
+.button-save-modal {
+    margin-inline: auto;
+    margin-block: 30px 0;
+    inline-size: 100%;
+}
+
+.save__button-icon {
+    inline-size: 39px;
+    color: var(--text-color, #fff);
+    flex-shrink: 0;
+}
+
+.save__desc {
+    display: flex;
+    gap: 20px;
+}
+
+.button-save:focus {
+    outline: none;
+}
+
+.button-save:focus-visible {
+    box-shadow: 2px 2px 0 0 var(--border-color, #000);
+}
+
+@media screen(375px) {
+    .save {
+        padding: 28px 34px 28px 40px;
+        max-inline-size: 340px;
+    }
 }
