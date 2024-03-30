@@ -1,17 +1,23 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
-    --text-color: #00CC14;
-    --border-color: #00CC14;
-    --back-color: #000;
-    --button-color: #00CC14;
-    --like-sprite: url("../svg/hearts-dark.svg");
+    --text-color: #000;
+    --border-color: #000;
+    --back-color: #fff;
+    --button-color: #fff;
     --stroke-color: #fff;
+
+    --font-PressStart: 'PressStart2P', fantasy;
 
     --page-background-image: repeating-linear-gradient(
             to left,
-            #000000 0 2px,
-            #00000000 2px 4px
+            #d3d3d3 0 2px,
+            #d3d3d300 2px 4px
     ),
-    repeating-linear-gradient(to bottom, #000000 0 2px, #00000000 2px 4px),
-    linear-gradient(to bottom, #007f0c, #004306);
+    repeating-linear-gradient(to bottom, #d3d3d3 0 2px, #d3d3d300 2px 4px),
+    linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
+
+    --like-main-body-color: none;
+    --like-contour: var(--text-color, #000000);
+    --like-sparks: #ff0000;
+    --page-main-wght: 400;
 }

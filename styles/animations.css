@@ -13,40 +13,93 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
 
+.like-icon .core {
+    fill: var(--back-color, #ffffff);
+    transition: fill 0.3s linear 0.03s;
+}
 
-@keyframes menu-pointer {
-    0% {
-        translate: 0 0;
+.like-icon .main-body {
+    fill: var(--back-color, #ffffff);
+    transition: fill 0.3s linear;
+}
+
+.like-icon .contour {
+    fill: var(--border-color, #000000);
+    transition: fill 0.1s linear;
+}
+
+.like-icon .heart {
+    transform-origin: center;
+}
+
+.like-icon .sparks {
+    opacity: 0;
+}
+
+
+
+.like-icon:hover .core {
+    fill: var(--like-contour, #000000);
+    transition: fill 0.3s linear;
+}
+
+.like-icon:hover .main-body {
+    fill: var(--like-contour, #000000);
+    transition: fill 0.3s linear 0.05s;
+}
+
+
+
+.like-icon:active .core {
+    fill: var(--like-sparks, #ff0000);
+    transition: fill 0.3s linear;
+}
+
+.like-icon:active .main-body {
+    fill: var(--like-sparks, #ff0000);
+    transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .core {
+    fill: var(--like-sparks, #ff0000);
+    transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .main-body {
+    fill: var(--like-sparks, #ff0000);
+    transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .contour {
+    fill: var(--like-sparks, #ff0000);
+    transition: fill 0.3s linear 0.06s;
+}
+
+
+
+.like-icon.is-liked .heart {
+    animation: heart 0.3s ease-in 0.1s 1 alternate;
+}
+
+.like-icon.is-liked .sparks {
+    animation: sparks 0.3s ease-in 0.3s 1 alternate;
+}
+
+
+@keyframes sparks {
+    from {
+        opacity: 0;
     }
-
-    100% {
-        translate: -6px 0;
+    to {
+        opacity: 1;
     }
 }
 
-@keyframes like-icon-hover {
-    0% {
-        translate: 0;
+@keyframes heart {
+    from {
+        transform: scale(1);
     }
-    100% {
-        translate: -78px 0;
-    }
-}
-
-@keyframes like-icon-active {
-    0% {
-        translate: -117px 0;
-    }
-    100% {
-        translate: -195px 0;
-    }
-}
-
-@keyframes like-icon-like {
-    0% {
-        translate: -234px 0;
-    }
-    100% {
-        translate: -429px 0;
+    to {
+        transform: scale(1.5);
     }
 }
