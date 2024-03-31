@@ -12,7 +12,8 @@
     --button-color: #fff;
     --stroke-color: #fff;
 
-    --font-PressStart: 'PressStart2P', fantasy;
+    --font-accent: 'PressStart2P', fantasy;
+    --header-font-weight: 700;
 
     --page-background-image: repeating-linear-gradient(
             to left,
@@ -35,7 +36,8 @@
     --button-color: #00CC14;
     --stroke-color: #fff;
 
-    --font-PressStart: 'PressStart2P', fantasy;
+    --font-accent: 'PressStart2P', fantasy;
+    --header-font-weight: 785;
 
     --page-background-image: repeating-linear-gradient(
             to left,
@@ -48,7 +50,7 @@
     --like-main-body-color: none;
     --like-contour: var(--text-color, #000);
     --like-sparks: #ff0000;
-    --page-main-wght: 400;
+    --page-main-wght: 465;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -59,7 +61,8 @@
         --button-color: #00CC14;
         --stroke-color: #fff;
 
-        --font-PressStart: 'PressStart2P', fantasy;
+        --font-accent: 'PressStart2P', fantasy;
+        --header-font-weight: 785;
 
         --page-background-image: repeating-linear-gradient(
                 to left,
@@ -72,6 +75,6 @@
         --like-main-body-color: none;
         --like-contour: var(--text-color, #000);
         --like-sparks: #ff0000;
-        --page-main-wght: 400;
+        --page-main-wght: 465;
     }
 }

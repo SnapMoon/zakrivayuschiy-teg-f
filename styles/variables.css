@@ -6,7 +6,9 @@
     --button-color: #fff;
     --stroke-color: #fff;
 
-    --font-PressStart: 'PressStart2P', fantasy;
+    --font-main: Inter, sans-serif;
+    --font-accent: 'PressStart2P', fantasy;
+    --header-font-weight: 400;
 
     --page-background-image: repeating-linear-gradient(
             to left,
