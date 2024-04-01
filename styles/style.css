@@ -144,7 +144,7 @@
     align-items: end;
     padding-block-end: 25px;
     background-color: var(--back-color, #fff);
-    position: relative;
+
 }
 
 .card-title {
@@ -175,6 +175,7 @@
     border-bottom: 2px solid var(--border-color);
     max-height: 696px;
     overflow: hidden;
+    position: relative;
 }
 
 .card-img {
@@ -186,8 +187,8 @@
 
 .card-img-text {
     position: absolute;
-    top: 55px;
-    right: 25px;
+    inset-inline-end: 13px;
+    inset-block-start: 24px;
     font-family: var(--font-accent);
     font-size: 14px;
     line-height: 14px;
@@ -395,11 +396,6 @@
 
 @media (width <= 375px) {
 
-    .card-img-text:nth-child(2) {
-        top: 77px;
-        right: 10px;
-    }
-
     .header__title-accent {
         margin-block-start: 115px;
     }
@@ -431,10 +427,9 @@
     }
 
     .button-save {
-        max-inline-size: 306px;
         flex-direction: column;
         padding: 12px 0;
-        inline-size: 335px;
+        max-inline-size: 335px;
     }
 
     .button-icon {
@@ -442,6 +437,9 @@
         inline-size: 28px;
     }
 
+    .button__text {
+        padding-inline: 20px;
+    }
 }
 
 @supports (
